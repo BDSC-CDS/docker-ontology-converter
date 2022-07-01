@@ -19,6 +19,9 @@ up:
 up-d:
 	docker run -it -d --name ontology_converter -v $(ONTOLOGY_LOCATION):/ontology -v $(OUTPUT_TABLES_LOCATION):/output_tables -v $(CONFIG_FOLDER):/config ontology-converter:latest
 
+follow:
+	docker logs --follow ontology_converter
+
 stop:
 	docker stop ontology_converter
 down:
