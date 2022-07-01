@@ -8,7 +8,7 @@ DEBUG_TABLES_LOCATION = /home/ju5750/debug_tables
 OUTPUT_TABLES_LOCATION = /home/ju5750/output_tables
 
 
-CONFIG_FOLDER = /home/ju5750/docker-ontology-manager/config
+CONFIG_FOLDER = /home/ju5750/docker-ontology-converter/config
 
 
 build:
