@@ -1,14 +1,14 @@
 #COPY YOUR ABSOLUTE PATH TO THE ONTOLOGY FOLDER HERE. IT SHOULD CONTAIN A "main_ontologies" SUBFOLDER AND A "external_terminologies" SUBFOLDER.
-ONTOLOGY_LOCATION = /home/ju5750/ontology
+ONTOLOGY_LOCATION = /home/${USER}/ontology
 
 #COPY YOUR DEBUG (DESTINATION FOR ONTOLOGY WITH CLEARTEXT BASECODES) TABLES LOCATION HERE
-DEBUG_TABLES_LOCATION = /home/ju5750/debug_tables
+DEBUG_TABLES_LOCATION = /home/${USER}/debug_tables
 
 #COPY YOUR ABSOLUTE PATH TO THE OUTPUT TABLES FOLDER HERE.
-OUTPUT_TABLES_LOCATION = /home/ju5750/output_tables
+OUTPUT_TABLES_LOCATION = /home/${USER}/output_tables
 
 
-CONFIG_FOLDER = /home/ju5750/docker-ontology-converter/config
+CONFIG_FOLDER = /home/${USER}/docker-ontology-converter/config
 
 
 build:
