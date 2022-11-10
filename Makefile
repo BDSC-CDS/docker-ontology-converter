@@ -36,6 +36,6 @@ wipe:
 bash:
 	docker exec -it ontology_converter bash
 	
-debug: 
+verbose: 
 	sed -i 's/"DEBUG":"False"/"DEBUG":"True"/g' $(CONFIG_FOLDER)/i2b2_rdf_config.json
 	docker run -it -d --name ontology_converter -v $(ONTOLOGY_LOCATION):/ontology -v $(DEBUG_TABLES_LOCATION):/output_tables -v $(CONFIG_FOLDER):/config ontology-converter:latest
