@@ -2,7 +2,7 @@
 ONTOLOGY_LOCATION = /home/${USER}/ontology
 
 #COPY YOUR DEBUG (DESTINATION FOR ONTOLOGY WITH CLEARTEXT BASECODES) TABLES LOCATION HERE
-DEBUG_TABLES_LOCATION = /home/${USER}/debug_tables
+VERBOSE_TABLES_LOCATION = /home/${USER}/verbose_tables
 
 #COPY YOUR ABSOLUTE PATH TO THE OUTPUT TABLES FOLDER HERE.
 OUTPUT_TABLES_LOCATION = /home/${USER}/output_tables
@@ -38,4 +38,7 @@ bash:
 	
 verbose: 
 	sed -i 's/"DEBUG":"False"/"DEBUG":"True"/g' $(CONFIG_FOLDER)/i2b2_rdf_config.json
-	docker run -it -d --name ontology_converter -v $(ONTOLOGY_LOCATION):/ontology -v $(DEBUG_TABLES_LOCATION):/output_tables -v $(CONFIG_FOLDER):/config ontology-converter:latest
+	docker run -it -d --name ontology_converter -v $(ONTOLOGY_LOCATION):/ontology -v $(VERBOSE_TABLES_LOCATION):/output_tables -v $(CONFIG_FOLDER):/config ontology-converter:latest
+
+debug:
+	make verbose $@
