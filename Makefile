@@ -41,4 +41,4 @@ verbose:
 	docker run -it -d --name ontology_converter -v $(ONTOLOGY_LOCATION):/ontology -v $(VERBOSE_TABLES_LOCATION):/output_tables -v $(CONFIG_FOLDER):/config ontology-converter:latest
 
 debug:
-	make verbose $@
+	make verbose 
