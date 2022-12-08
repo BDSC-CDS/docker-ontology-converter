@@ -14,11 +14,10 @@ CONFIG_FOLDER = /home/${USER}/docker-ontology-converter/config
 build:
 	docker build . -t ontology-converter:latest   
 up:
-	sed -i 's/"DEBUG":"True"/"DEBUG":"False"/g' $(CONFIG_FOLDER)/i2b2_rdf_config.json
+	sed -i 's/"DEBUG": "True"/"DEBUG": "False"/g' $(CONFIG_FOLDER)/i2b2_rdf_config.json
 	docker run -it --name ontology_converter -v $(ONTOLOGY_LOCATION):/ontology  -v  $(OUTPUT_TABLES_LOCATION):/output_tables -v $(CONFIG_FOLDER):/config ontology-converter:latest
-
 up-d:
-	sed -i 's/"DEBUG":"True"/"DEBUG":"False"/g' $(CONFIG_FOLDER)/i2b2_rdf_config.json
+	sed -i 's/"DEBUG": "True"/"DEBUG": "False"/g' $(CONFIG_FOLDER)/i2b2_rdf_config.json
 	docker run -it -d --name ontology_converter -v $(ONTOLOGY_LOCATION):/ontology -v $(OUTPUT_TABLES_LOCATION):/output_tables -v $(CONFIG_FOLDER):/config ontology-converter:latest
 
 follow:
@@ -37,7 +36,7 @@ bash:
 	docker exec -it ontology_converter bash
 	
 verbose: 
-	sed -i 's/"DEBUG":"False"/"DEBUG":"True"/g' $(CONFIG_FOLDER)/i2b2_rdf_config.json
+	sed -i 's/"DEBUG": "False"/"DEBUG": "True"/g' $(CONFIG_FOLDER)/i2b2_rdf_config.json
 	docker run -it -d --name ontology_converter -v $(ONTOLOGY_LOCATION):/ontology -v $(VERBOSE_TABLES_LOCATION):/output_tables -v $(CONFIG_FOLDER):/config ontology-converter:latest
 
 debug:
